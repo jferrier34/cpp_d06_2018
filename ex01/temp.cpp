@@ -29,15 +29,3 @@ void celsius_to_fahrenheit(float temp)
     std::cout << std::setw(16) << std::fixed <<std::setprecision(3) << res << std::setw(16) << "Celcius\n";
 
 }
-
-int main(void)
-{
-    char data[1000];
-    float temp = 0;
-    std::cin >> temp >> data;
-    if (strcmp(data, "Celcius") == 0) {
-    fahrenheit_to_celsius(temp);
-    }
-    else
-        return (84);
-}
