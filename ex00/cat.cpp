@@ -16,7 +16,7 @@ int main(int argc, char **argv)
     std::string line;
     char c;
     if (argc < 1) {
-        std::cout << "my_cat: Usage : " << argv[0] << " file [...]\n";
+        std::cerr << "my_cat: Usage : " << argv[0] << " file [...]\n";
             return (84);
     }
     if (argc >= 1) {
@@ -28,7 +28,8 @@ int main(int argc, char **argv)
 		myfile.close();
 	    }
 	    else
-		     std::cerr << "my_cat: Usage: ./my_cat file [...]\n";
+		std::cerr << "my_cat: " << argv[i]
+			  << ": No such file or directory" << std::endl;
         }
     }
 }
