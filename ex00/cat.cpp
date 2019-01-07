@@ -26,10 +26,9 @@ int main(int argc, char **argv)
 	        while (myfile.get(c))
 		    std::cout << c;
 		myfile.close();
-		std::cout << "\n";
 	    }
 	    else
-		     std::cout << "ERREUR\n";
+		     std::cerr << "my_cat: Usage: ./my_cat file [...]\n";
         }
     }
 }
