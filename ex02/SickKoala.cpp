@@ -16,10 +16,20 @@ std::string replace_all(std::string str, const std::string& from, const std::str
     return str;
 }
 
+SickKoala::~SickKoala(void)
+{
+    std::cout <<"Mr." << this->name << ": Kreooogg!! I'm cuuuured!\n";
+}
+
+SickKoala::SickKoala(std::string name)
+{
+    this->name = name;
+}
+
 void SickKoala::overDrive(std::string str)
 {
         str = replace_all(str, "Kreog !", "1337 !");
-        std::cout << "Mr." << this->name << ": "<< str;
+        std::cout << "Mr." << this->name << ": "<< str << std::endl;
 }
 
 void SickKoala::poke()
