@@ -15,20 +15,21 @@
 #include <stdlib.h>
 #include <cstring>
 #include <iostream>
+#include "SickKoala.hpp"
 
 class KoalaNurse {
 
 	private:
-	unsigned int id;
-	bool active;
+	int id;
+	bool onwork;
 
 	public:
-	KoalaNurse(std::string);
-    KoalaNurse(void);
-    ~KoalaNurse(void);
-    void giveDrug(std::string, SickKoala *);
-    void timeCHeck(void);
-}:
+        KoalaNurse(int id);
+        ~KoalaNurse();
+        void giveDrug(std::string drug, SickKoala *SickKoala);
+        void timeCheck();
+    std::string readReport(std::string filename);
+};
 
 
 #endif

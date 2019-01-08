@@ -8,57 +8,59 @@
 #include "KoalaNurse.hpp"
 #include "SickKoala.hpp"
 
-std::string my_cat(std::string str)
+KoalaNurse::~KoalaNurse()
 {
-    std::ifstream myfile;
-    std::string line;
-
-    myfile.open(str);
-    if (myfile.is_open()) {
-	std::getline(myfile, line);
-	myfile.close();
-	return (line);
-    }
-    return NULL;
-}
-
-
-KoalaNurse::~KoalaNurse(void)
-{
-    sdt::cout <<"Nurse " << this->id << ": Finally some rest!" << std::endl;
+    std::cout << "Nurse " << this->id << ": Finally some rest!" << std::endl;
 }
 
 KoalaNurse::KoalaNurse(int id)
 {
     this->id = id;
+    this->onwork = false;
 }
 
-KoalaNurse::giveDrug(std::string drug, SickKoala *Koala)
+void KoalaNurse::giveDrug(std::string drug, SickKoala *SickKoala)
 {
-    Koala->takeDrug(drug);
+    SickKoala->takeDrug(drug);
 }
 
-KoalaNurse::readReport(std::string filename)
+std::string KoalaNurse::readReport(std::string filename)
 {
     std::string name = filename + ".report";
-    std::string str = my_cat(name);
+    std::string str = "";
+    std::string drug = "";
+    std::ifstream my_drug;
+    char c;
 
-    if (!name || name == NULL)
-        return ;
-    else {
-    std::cout << "Nurse " << this->id << ": Kreog! Mr." << filename << "needs a " << drug  << "!" << std::endl;
+    my_drug.open(name, std::ifstream::in);
+    if (my_drug) {
+	while (my_drug.get(c))
+	    drug += c;
+    std::cout << "Nurse " << this->id << ": Kreog! Mr." << filename << " needs a " << drug << "!" << std::endl;
     return (drug);
-    }
-    return (drug);
+    } else
+        return (str);
 }
 
-void KoalaNurse::timeCheck(void)
+void KoalaNurse::timeCheck()
 {
     if (this->onwork == true) {
     std::cout << "Nurse " << this->id << ": Time to get to work!" << std::endl;
     } else
     {
         this->onwork = false;
-    std::cout << "Nurse " << this->id << ": Time to go home to my eucalyptus forest!" << endle;
+	std::cout << "Nurse " << this->id << ": Time to go home to my eucalyptus forest!" << std::endl;
     }
+}
+
+
+int main(void)
+{
+    KoalaNurse KoalaNurse(194);
+    SickKoala SickKoala("Koko");
+
+    KoalaNurse.giveDrug("Mars", &SickKoala);
+    KoalaNurse.readReport("truc");
+    KoalaNurse.timeCheck();
+    return 0;
 }

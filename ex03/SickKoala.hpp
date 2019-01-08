@@ -22,12 +22,11 @@ class SickKoala {
     std::string name;
 
     public:
-    SickKoala(std::string);
-    SickKoala();
+    SickKoala(std::string name);
     ~SickKoala();
-    void poke(void);
-    void overDrive(std::string);
-    bool takeDrug(std::string);
+    void poke();
+    void overDrive(std::string str);
+    bool takeDrug(std::string str);
 };
 
 #endif

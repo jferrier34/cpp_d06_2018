@@ -16,9 +16,9 @@ std::string replace_all(std::string str, const std::string& from, const std::str
     return str;
 }
 
-SickKoala::~SickKoala(void)
+SickKoala::~SickKoala()
 {
-    std::cout <<"Mr." << this->name << ": Kreooogg!! I'm cuuuured!\n";
+    std::cout <<"Mr." << this->name << ": Kreooogg!! I'm cuuuured!" << std::endl;
 }
 
 SickKoala::SickKoala(std::string name)
@@ -34,7 +34,7 @@ void SickKoala::overDrive(std::string str)
 
 void SickKoala::poke()
 {
-    std::cout << "Mr." << this->name << ": Kreooogg!!\n";
+    std::cout << "Mr." << this->name << ": Kreooogg!!" << std::endl;
 }
 
 bool SickKoala::takeDrug(std::string str)
