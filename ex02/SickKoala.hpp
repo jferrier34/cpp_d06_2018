@@ -23,9 +23,8 @@ class SickKoala {
 
     public:
     SickKoala(std::string);
-    SickKoala();
     ~SickKoala();
-    void poke(void);
+    void poke();
     void overDrive(std::string);
     bool takeDrug(std::string);
 };

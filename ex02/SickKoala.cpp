@@ -18,7 +18,7 @@ std::string replace_all(std::string str, const std::string& from, const std::str
 
 SickKoala::~SickKoala(void)
 {
-    std::cout <<"Mr." << this->name << ": Kreooogg!! I'm cuuuured!\n";
+    std::cout <<"Mr." << this->name << ": Kreooogg!! I'm cuuuured!" << std::endl;
 }
 
 SickKoala::SickKoala(std::string name)
@@ -46,7 +46,8 @@ bool SickKoala::takeDrug(std::string str)
     if (str == "mars") {
     std::cout <<"Mr." << this->name << ": Mars, and it kreogs!\n";
     return true;
-    } else
+    } else {
         std::cout <<"Mr." << this->name << ": Goerkreog!\n";
         return false;
+    }
 }
