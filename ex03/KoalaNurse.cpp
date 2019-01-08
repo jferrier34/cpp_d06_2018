@@ -52,15 +52,3 @@ void KoalaNurse::timeCheck()
 	std::cout << "Nurse " << this->id << ": Time to go home to my eucalyptus forest!" << std::endl;
     }
 }
-
-
-int main(void)
-{
-    KoalaNurse KoalaNurse(194);
-    SickKoala SickKoala("Koko");
-
-    KoalaNurse.giveDrug("Mars", &SickKoala);
-    KoalaNurse.readReport("truc");
-    KoalaNurse.timeCheck();
-    return 0;
-}
