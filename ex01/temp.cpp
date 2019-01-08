@@ -15,17 +15,31 @@ void fahrenheit_to_celsius(float temp)
 {
     float res;
 
-    res = 5.0 / 9.0 * (temp - 32);
+    res = 9.0 / 5.0 * temp + 32;
 
-    std::cout << std::setw(16) << std::fixed <<std::setprecision(3) << res<< std::setw(16) << "Fahrenheit\n";
+    std::cout << std::setw(16) << std::fixed << std::setprecision(3) << res<< std::setw(16) << "Fahrenheit" << std::endl;
 }
 
 void celsius_to_fahrenheit(float temp)
 {
     float res;
 
-    res = (temp - 32.0) * 5.0 / 9.0;
+    res = 5.0 / 9.0 * (temp - 32);
+    
+    std::cout << std::setw(16) << std::fixed << std::setprecision(3 )<< res << std::setw(16) << "Celsius" << std::endl;
 
-    std::cout << std::setw(16) << std::fixed <<std::setprecision(3) << res << std::setw(16) << "Celcius\n";
+}
 
+
+int main(void)
+{
+    char data[1000];
+    float temp = 0;
+    std::cin >> temp >> data;
+
+    if (strncmp(data, "Celcius", 7) == 0);
+    celsius_to_fahrenheit(temp);
+    if (strncmp(data, "Farhenheit", 10) == 0)
+    fahrenheit_to_celsius(temp);
+    return 0;
 }

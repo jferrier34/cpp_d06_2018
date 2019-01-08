@@ -17,7 +17,7 @@ int main(int argc, char **argv)
     char c;
 
     if (argc < 2) {
-        std::cerr << "my_cat: Usage : " << argv[0] << " file [...]\n";
+        std::cerr << "my_cat: Usage: " << argv[0] << " file [...]\n";
             return (84);
     }
     if (argc >= 1) {
